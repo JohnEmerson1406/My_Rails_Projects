@@ -1,2 +1,21 @@
-<h1>Home#confirmed</h1>
-<p>Find me in app/views/home/confirmed.html.erb</p>
+<h1>Confirmados</h1>
+
+<table>
+    <thead>
+        <td>País</td>
+        <td>Cidade</td>
+        <td>Confirmados</td>
+        <td>Última atualização</td>
+    </thead>
+
+    <tbody>
+        <% @confirmed.each do |confirmed| %>
+            <tr>
+                <td><%= confirmed['countryRegion'] %></td>
+                <td><%= confirmed['provinceState'] %></td>
+                <td><%= confirmed['confirmed'] %></td>
+                <td><%= Time.at(confirmed['lastUpdate'].to_i/1000).strftime('%d/%m/%Y %H:%M:%S') %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
