@@ -1,6 +1,7 @@
 <h1>Seja Bem-Vindo!</h1>
 <p><%= nome_aplicacao %></p>
-<p>Data: <%= Date.today %></p>
+<p>O idioma usado é: <strong><%= I18n.locale %></strong></p>
+<p>Data: <%= l(Date.today) %></p>
 
 <%= render "menu" %>
 
