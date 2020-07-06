@@ -30,7 +30,7 @@ coins = [
         description: "Bitcoin",
         acronym: "BTC",
         url_image: "https://foxbit.com.br/wp-content/uploads/2019/01/Bitcoin.png",
-        mining_type: MiningType.where(acronym: 'PoW')
+        mining_type: MiningType.find(acronym: 'PoW') # 'where' retorna uma lista, 'find' retorna um elemento
     },
     {
         description: "Ethereum",
