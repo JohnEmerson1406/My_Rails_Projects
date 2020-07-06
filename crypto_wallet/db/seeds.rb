@@ -22,3 +22,22 @@ coins = [
 coins.each do |coin|
     Coin.find_or_create_by!(coin)
 end
+
+mining_types = [
+    {
+        description: "Proof of Work",
+        acronym: "PoW"
+    },
+    {
+        description: "Proof of Stake",
+        acronym: "PoS"
+    },
+    {
+        description: "Proof of Capacity",
+        acronym: "PoC"
+    }
+]
+
+mining_types.each do |mining_type|
+    MiningType.find_or_create_by!(mining_type)
+end
