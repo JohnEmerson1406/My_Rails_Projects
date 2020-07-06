@@ -1,11 +1,7 @@
 <h1>Seja Bem-Vindo!</h1>
 <p><%= nome_aplicacao %></p>
 <p>Data: <%= data_br(Date.today) %></p>
-<ul>
-    <li>
-        <%# http://localhost:3000/rails/info/routes %>
-        <%= link_to "Cadastro de Moedas", coins_path %>
-    </li>
-</ul>
+
+<%= render "menu" %>
 
 <p>Você está em ambiente de <strong><%= ambiente_rails %></strong></p>
