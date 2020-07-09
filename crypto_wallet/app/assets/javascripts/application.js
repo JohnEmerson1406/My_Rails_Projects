@@ -15,4 +15,4 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery
-//= require notify-js-legacy
+//= require notify-js-legacy/notify
