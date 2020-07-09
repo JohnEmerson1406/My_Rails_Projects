@@ -1,3 +1,12 @@
+<div class="jumbotron">
+    <h1 class="display-4">Seja Bem-Vindo!</h1>
+    <p class="lead">Este é o Crypto Wallet.</p>
+    <hr class="my-4">
+    <p>Para começar, selecione uma das opções abaixo:</p>
+    <a class="btn btn-primary btn-lg" href="#" role="button">Moedas</a>
+    <a class="btn btn-primary btn-lg" href="#" role="button">Tipos de Mineração</a>
+</div>
+
 <p>
     <%#= link_to 'Português', '/?locale=pt-BR' %>
     <%= link_to 'Português', root_path(locale: "pt-BR") %>
@@ -7,7 +16,6 @@
     <%= link_to 'English', root_path(locale: "en") %>
 </p>
 
-<h1>Seja Bem-Vindo!</h1>
 <p><%= nome_aplicacao %></p>
 <p>O idioma usado é: <strong><%= I18n.locale %></strong></p>
 <p>Data: <%= l(Date.today) %></p>

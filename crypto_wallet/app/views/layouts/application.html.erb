@@ -10,7 +10,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
     <script>$.notify("Funcionou!", "success");</script>
   </body>
 </html>
