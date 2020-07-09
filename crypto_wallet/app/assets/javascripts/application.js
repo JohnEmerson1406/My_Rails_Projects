@@ -16,4 +16,5 @@
 //= require_tree .
 //= require jquery
 //= require notify-js-legacy/notify
-//= require bootstrap
+//= require bootstrap/dist/js/bootstrap
+//= require popper.js/dist/popper
