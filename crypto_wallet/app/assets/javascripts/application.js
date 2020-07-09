@@ -16,3 +16,4 @@
 //= require_tree .
 //= require jquery
 //= require notify-js-legacy/notify
+//= require bootstrap
