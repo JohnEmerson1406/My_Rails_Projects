@@ -31,7 +31,13 @@
 
 en:
   hello: "Hello world"
+  welcome: "Welcome!"
+  messages:
+    welcome: "This is Crypto Wallet."
+    menu: "To start, choose an option below:"
   links:
     show: "Show"
     edit: "Edit"
     delete: "Delete"
+  coins: "Coins"
+  mining_types: "Mining Types"

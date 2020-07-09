@@ -1,6 +1,12 @@
 pt-BR:
   hello: "Olá Mundo"
+  welcome: "Seja Bem-Vindo!"
+  messages:
+    welcome: "Este é o Crypto Wallet."
+    menu: "Para começar, selecione uma das opções abaixo:"
   links:
     show: "Mostrar"
     edit: "Editar"
     delete: "Deletar"
+  coins: "Moedas"
+  mining_types: "Tipos de Mineração"
