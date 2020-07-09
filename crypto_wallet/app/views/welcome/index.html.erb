@@ -3,14 +3,12 @@
     <p class="lead">Este é o Crypto Wallet.</p>
     <hr class="my-4">
     <p>Para começar, selecione uma das opções abaixo:</p>
-    <a class="btn btn-primary btn-lg" href="#" role="button">Moedas</a>
-    <a class="btn btn-primary btn-lg" href="#" role="button">Tipos de Mineração</a>
+    
+    <%= render "menu" %>
 </div>
 
 <p><%= nome_aplicacao %></p>
 <p>O idioma usado é: <strong><%= I18n.locale %></strong></p>
 <p>Data: <%= l(Date.today) %></p>
-
-<%= render "menu" %>
 
 <p>Você está em ambiente de <strong><%= ambiente_rails %></strong></p>
