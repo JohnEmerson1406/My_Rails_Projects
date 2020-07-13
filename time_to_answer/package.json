@@ -1,7 +1,14 @@
 {
   "name": "time_to_answer",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "5.13.1",
+    "bootstrap": "4.5.0",
+    "chart.js": "2.9.3",
+    "datatables.net-bs4": "1.10.21",
+    "jquery": "3.5.1",
+    "jquery.easing": "^1.4.1"
+  },
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT"
