@@ -29,7 +29,16 @@ module Railstestes
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
-    # Don't generate system test files.
-    config.generators.system_tests = nil
+    # # Don't generate system test files.
+    # config.generators.system_tests = nil
+
+    #Rspec COnfiguration
+    config.generators do |g|
+      g.test_framework :rspec, :view_specs => false,
+                               :controller_specs => false,
+                               :helper_specs => false,
+                               :routing_specs => false,
+                               :request_specs => false
+    end
   end
 end
