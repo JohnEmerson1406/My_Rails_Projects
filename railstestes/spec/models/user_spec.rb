@@ -1,31 +1,37 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  context "Validade de um Usuário" do
-    it "Usuário válido" do
+  context "Teste IsEmpty" do
+    it "String válida" do
       user = User.new
       user.name = "John"
-      user.email = "john@john.com"
-
-      expect(user.valid?).to be_truthy 
+      expect(user.isEmpty).to be_falsey
     end
 
-    it "Usuário inválido" do
+    it "String nula" do
       user = User.new
-      user.name = "John"
-      user.email = nil
+      user.name = nil
+      expect(user.isEmpty).to be_truthy
+    end
 
-      expect(user.valid?).to be_falsey
+    it "String vazia" do
+      user = User.new
+      user.name = ""
+      expect(user.isEmpty).to be_truthy
     end
   end
 
-  context "Títulos válidos" do
-    it "Título completo" do
+  context "Teste Reverse" do
+    it "Reverse válido" do
       user = User.new
       user.name = "John"
-      user.email = "john@john.com"
+      expect(user.reverseString).to eql("John")
+    end
 
-      expect(user.titulo_completo).to eql("Sr. John - Email: john@john.com") 
+    it "Reverse nulo" do
+      user = User.new
+      user.name = nil
+      expect(user.reverseString).to be_nil
     end
   end
   

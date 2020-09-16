@@ -1,8 +1,11 @@
 class User < ApplicationRecord
-  validates :name, presence: true
-  validates :email, presence: true
+  # validates :name, presence: true
 
-  def titulo_completo
-    "#{self.name} Email: #{self.email}"
+  def isEmpty
+    self.name.blank?
+  end
+
+  def reverseString
+    self.name == nil ? nil : self.name.reverse
   end
 end
