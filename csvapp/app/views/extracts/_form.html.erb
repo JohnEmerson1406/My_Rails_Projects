@@ -1,0 +1,32 @@
+<%= form_with(model: extract) do |form| %>
+  <% if extract.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(extract.errors.count, "error") %> prohibited this extract from being saved:</h2>
+
+      <ul>
+        <% extract.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :movement %>
+    <%= form.text_field :movement %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kind %>
+    <%= form.number_field :kind %>
+  </div>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.text_field :value %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
