@@ -34,7 +34,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">CSV App</div>
             </a>
 
             <!-- Divider -->
@@ -288,6 +288,9 @@
 
                     <!-- Page Heading -->
                     <!-- <h1 class="h3 mb-4 text-gray-800">Titulo da pagina em branco</h1> -->
+                    <div class="page-header d-flex flex-row justify-content-between align-items-center">
+                        <%= yield(:page_header) %>
+                    </div>
 
                     <%= yield %>
 

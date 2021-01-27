@@ -1,13 +1,11 @@
 <%- model_class = Extract -%>
 
 <%= content_for :page_header do %>
-  <h3><%= model_class.model_name.human(count: 2).titleize %></h3>
-  <%= link_to "Novo", new_extract_path, class: 'btn btn-primary btn-rounded' %>
+  <h1><%= model_class.model_name.human(count: 2).titleize %></h1>
+  <%= link_to "Adicionar", new_extract_path, class: 'btn btn-primary btn-rounded' %>
 <% end %>
 
 <p id="notice"><%= notice %></p>
-
-<h1>Extracts</h1>
 
 <% if @extracts.present? %>
   <div class="table-responsive">
@@ -52,5 +50,3 @@
 <% end %>
 
 <br>
-
-<%= link_to 'New Extract', new_extract_path %>
