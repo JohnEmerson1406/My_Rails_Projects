@@ -4,7 +4,7 @@ class ExtractsController < ApplicationController
   # GET /extracts
   # GET /extracts.json
   def index
-    @extracts = Extract.all
+    @extracts = User.find(current_user.id).extracts
   end
 
   # GET /extracts/1
@@ -25,6 +25,7 @@ class ExtractsController < ApplicationController
   # POST /extracts.json
   def create
     @extract = Extract.new(extract_params)
+    @extract.user = current_user
 
     respond_to do |format|
       if @extract.save
@@ -69,6 +70,6 @@ class ExtractsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def extract_params
-      params.require(:extract).permit(:movement, :kind, :value)
+      params.require(:extract).permit(:user_id, :movement, :kind, :value)
     end
 end
