@@ -5,6 +5,14 @@
   <%= link_to "Adicionar", new_extract_path, class: 'btn btn-primary btn-rounded' %>
 <% end %>
 
+<%= render 'extracts/search' %>
+
+<hr>
+
+<p>
+  <%= page_entries_info @extracts %>
+</p>
+
 <p id="notice"><%= notice %></p>
 
 <% if @extracts.present? %>
@@ -16,6 +24,7 @@
           <th><%= model_class.human_attribute_name(:movement) %></th>
           <th><%= model_class.human_attribute_name(:kind) %></th>
           <th><%= model_class.human_attribute_name(:value) %></th>
+          <th><%= model_class.human_attribute_name(:created_at) %></th>
           <th><%= "Ações" %></th>
         </tr>
       </thead>
@@ -27,6 +36,7 @@
             <td><%= extract.movement %></td>
             <td><%= extract.kind %></td>
             <td><%= extract.value %></td>
+            <td><%= l(extract.created_at) %></td>
             
             <td class="options">
               <%= link_to extract_path(extract), class: 'tippy btn btn-info btn-sm btn-rounded',
@@ -50,3 +60,5 @@
 <% end %>
 
 <br>
+
+<%= paginate @extracts %>

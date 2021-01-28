@@ -1,0 +1,14 @@
+<div class="text-center">
+  <%= search_form_for @q, url: extracts_path, class: 'form-inline d-flex justify-content-center' do |f| %>
+    <%#= f.search_field :id_cont, placeholder: Extract.human_attribute_name(:id), class: 'form-control' %>&nbsp;
+    <%#= f.search_field :name_cont, placeholder: Model.human_attribute_name(:name), class: 'form-control' %>&nbsp;
+    <%#= f.select :make_id_eq, Make.all.collect { |m| [m.name, m.id] }, {prompt: 'Marca', include_blank: 'Ver todos'}, class: 'form-control select2' %>&nbsp;
+
+    <%= f.datetime_field :created_at_gteq, as: :datetime, html5: true, class: 'form-control' %>&nbsp;
+    <span><%= t('to') %></span>&nbsp;
+    <%= f.datetime_field :created_at_lteq, as: :datetime, html5: true, class: 'form-control' %>&nbsp;
+
+    <%= f.submit class: 'btn btn-outline-primary' %>&nbsp;
+    <%= link_to "&#10799;".html_safe, request.path, class: "font-weight-bold btn btn-outline-secondary" %>
+  <% end %>
+</div>
