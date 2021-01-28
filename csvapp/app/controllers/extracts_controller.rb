@@ -4,7 +4,8 @@ class ExtractsController < ApplicationController
   # GET /extracts
   # GET /extracts.json
   def index
-    @extracts = User.find(current_user.id).extracts
+    @q = User.find(current_user.id).extracts.ransack(params[:q])
+    @extracts = @q.result.page(params[:page]).per(10)
   end
 
   # GET /extracts/1
