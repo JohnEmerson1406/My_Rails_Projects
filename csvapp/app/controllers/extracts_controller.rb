@@ -30,7 +30,8 @@ class ExtractsController < ApplicationController
 
     respond_to do |format|
       if @extract.save
-        format.html { redirect_to @extract, notice: "Extract was successfully created." }
+        flash[:success] = "Extract was successfully created."
+        format.html { redirect_to @extract }
         format.json { render :show, status: :created, location: @extract }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -44,7 +45,8 @@ class ExtractsController < ApplicationController
   def update
     respond_to do |format|
       if @extract.update(extract_params)
-        format.html { redirect_to @extract, notice: "Extract was successfully updated." }
+        flash[:success] = "Extract was successfully updated."
+        format.html { redirect_to @extract }
         format.json { render :show, status: :ok, location: @extract }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -58,7 +60,8 @@ class ExtractsController < ApplicationController
   def destroy
     @extract.destroy
     respond_to do |format|
-      format.html { redirect_to extracts_url, notice: "Extract was successfully destroyed." }
+      flash[:success] = "Extract was successfully destroyed."
+      format.html { redirect_to extracts_url }
       format.json { head :no_content }
     end
   end
