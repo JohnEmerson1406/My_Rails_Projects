@@ -1,6 +1,6 @@
-<h1>Editing Extract</h1>
-
-<%= render 'form', extract: @extract %>
-
-<%= link_to 'Show', @extract %> |
-<%= link_to 'Back', extracts_path %>
+<%- model_class = Extract -%>
+<%= content_for :page_header do %>
+  <h1><%= t('.update', default: t("helpers.submit.update"), model: t('.title', default: model_class.model_name.human.titleize))%></h1>
+  <%= link_to t('.back', default: t("helpers.links.back")), extracts_path, class: 'btn btn-secondary btn-rounded' %>
+<% end %>
+<%= render 'form', url: extract_path, method: :put %>

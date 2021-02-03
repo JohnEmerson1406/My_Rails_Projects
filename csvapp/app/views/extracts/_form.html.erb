@@ -1,32 +1,13 @@
-<%= form_with(model: extract) do |form| %>
-  <% if extract.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(extract.errors.count, "error") %> prohibited this extract from being saved:</h2>
-
-      <ul>
-        <% extract.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<%= bootstrap_form_for(@extract, url: url, method: method, html: { class: 'form-horizontal' }) do |f| %>
+  <div class="block block-rounded block-themed">
+    <div class="block-content">
+      <%= f.text_field :movement %>
+      <%= f.select :kind, Extract.kinds.keys.map {|kind| [t("enums.kind.#{kind}"), kind]}, { include_blank: "Selecione o tipo" } %>
+      <%= f.number_field :value, step: :any %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :movement %>
-    <%= form.text_field :movement %>
   </div>
-
-  <div class="field">
-    <%= form.label :kind %>
-    <%= form.number_field :kind %>
-  </div>
-
-  <div class="field">
-    <%= form.label :value %>
-    <%= form.text_field :value %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, class: 'btn btn-primary btn-rounded', data: { disable_with: 'Salvando...'} %>
+    <%= link_to t('.cancel', default: t("helpers.links.cancel")) , extracts_path, class: 'btn btn-secondary btn-rounded' %>
   </div>
 <% end %>

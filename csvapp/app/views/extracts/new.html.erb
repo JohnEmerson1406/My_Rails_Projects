@@ -1,5 +1,6 @@
-<h1>New Extract</h1>
-
-<%= render 'form', extract: @extract %>
-
-<%= link_to 'Back', extracts_path %>
+<%- model_class = Extract -%>
+<%= content_for :page_header do %>
+  <h3><%= t('.create', default: t("helpers.submit.create"), model: t('.title', default: model_class.model_name.human.titleize))%></h3>
+  <%= link_to t('.back', default: t("helpers.links.back")), extracts_path, class: 'btn btn-secondary btn-rounded' %>
+<% end %>
+<%= render 'form', url: extracts_path, method: :post %>

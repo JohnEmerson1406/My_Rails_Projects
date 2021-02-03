@@ -1,17 +1,21 @@
-<p>
-  <strong>Movement:</strong>
-  <%= @extract.movement %>
-</p>
-
-<p>
-  <strong>Kind:</strong>
-  <%= @extract.kind %>
-</p>
-
-<p>
-  <strong>Value:</strong>
-  <%= @extract.value %>
-</p>
-
-<%= link_to 'Edit', edit_extract_path(@extract) %> |
-<%= link_to 'Back', extracts_path %>
+<%- model_class = Extract -%>
+<%= content_for :page_header do %>
+  <h1><%= t('.title', default: model_class.model_name.human.titleize) %></h1>
+  <%= link_to t('.back', default: t("helpers.links.back")), extracts_path, class: 'btn btn-secondary btn-rounded' %>
+<% end %>
+<div class="block block-rounded block-themed">
+  <div class="block-content">
+    <dl class="dl-horizontal">
+      <dt><strong><%= model_class.human_attribute_name(:movement) %>:</strong></dt>
+      <dd><%= @extract.movement %></dd>
+      <dt><strong><%= model_class.human_attribute_name(:kind) %>:</strong></dt>
+      <dd><%= t("enums.kind.#{@extract.kind}") %></dd>
+      <dt><strong><%= model_class.human_attribute_name(:value) %>:</strong></dt>
+      <dd><%= @extract.value %></dd>
+    </dl>
+  </div>
+  <div class="actions">
+    <%= link_to t('.edit', default: t("helpers.links.edit")), edit_extract_path(@extract), class: 'btn btn-primary btn-rounded' %>
+    <%= link_to t('.back', default: t("helpers.links.back")), extracts_path, class: 'btn btn-secondary btn-rounded' %>
+  </div>
+</div>
